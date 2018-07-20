@@ -1,8 +1,7 @@
 exports.run = (client, message, args) => {
-    function test() {
+    const schedule = require("node-schedule");
+    var postPic = schedule.scheduleJob("53 11 * * *", function(){
         message.channel.send({file: 'https://i.imgur.com/eA6CbjN.jpg'});
-    };
-    setInterval(function() {
-        test();
-    }, 86400000);
+    });
+    postPic;
 };
